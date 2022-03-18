@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "lato", sans-serif;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.panel {
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 1000ms ease-in-out ;
+}
+
+.panel.expandB{
+    flex: 0.75;
+    transform: scale(1.02);
+    transform-origin: top left;
+}
+
+.panel.expandS {
+    flex: 0.25;
+}
+
+#xbox {
+    background-image: url(xbox.jpg);
+}
+
+#xbox::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(158, 11, 134, 0.7);
+}
+
+#ps5 {
+    background-image: url(Ps5.jpg);
+}
+
+#ps5::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(54, 126, 235, 0.8);
+}
+
+h1 {
+    position: absolute;
+    top: 20%;
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.btn {
+    background: transparent;
+    border: 2px solid #fff;
+    width: 170px;
+    height: 50px;
+    position: absolute;
+    top: 36%;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+#xbox_b:hover {
+    background-color: rgba(158, 11, 134, 1);
+    border-color: rgba(158, 11, 134, 1);
+}
+
+#ps5_b:hover {
+    background-color: rgba(54, 126, 235, 1);
+    border-color: rgba(54, 126, 235, 1);
+}
+
+@media (max-width: 800px) {
+    body {
+        flex-direction: column;
+        flex: 1;
+    }
+    h1 {
+        top: 15%;
+    }
+}
